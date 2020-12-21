@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fadhli's Website</title>
+        <link rel="stylesheet" type="text/css" href="style3.css" />
+	</head>
+
+	<body>
+		<div id="container"> 
+            <div id="header">
+                <h1>Electronic Design</h1>
+            </div>
+        
+        <div id="content">
+            <div id="nav">
+                <h2>Navigation</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="info.html">Module Schedule</a></li>
+                        <li><a href="safety.html">FabLab Safety</a></li>
+                        <li><a href="electric.html">Electronics Production</a></li>
+                        <li><a class="selected" href="electronicdes.html">Electronics Design</a></li>
+                        <li><a href="final.html">Final Project</a>
+                            <ul>
+                                <li><a href=week1.html>Week 1</a></li>
+                                <li><a href=week2.html>Week 2</a></li>
+                                <li><a href=week3.html>Week 3</a></li>
+                                <li><a href=week4.html>Week 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+            </div>
+                  <div id="main">
+                    <h1><u>Electronic Design</u></h1>
+                      <p>Previously in <b>Electronics Production</b>, we simply converted an already done ISP board PNG image to Gcode. For this week, we were taught on how to design our very own PCB layout. To do so, we will be using an electronic design automation (EDA) software, called EAGLE. Below shows my documentation process of me designing and cutting out my own PCB board.</p>
+                      
+                    <h2>Autodesk EAGLE</h2>
+                      <p>Before doing anything, we first have to download the actual <a href=https://www.autodesk.com/products/eagle/overview?plc=F360&term=1-YEAR&support=ADVANCED&quantity=1>EAGLE</a> software itself.</p>
+                      
+                    <h2>Libraries</h2>
+                      <p>We then have to install a library called <a href=https://gitlab.cba.mit.edu/pub/libraries/tree/master/eagle>"fab.lbr"</a>, and add it to EAGLE so that we can use the component symbols in a schematic. To do so, simply just press on the fab.lbr and click on the download button as seen below.</p>
+                      
+                      <a href="images/design/fablbr.PNG"><img src="images/design/fablbr.PNG" width=500></a>
+                      
+                      <p>Once downloaded, we then go ahead and find our EAGLE library folder. By default, it should be in the documents folder, unless changed by you. Once in the <b>libraries</b> folder, we can then go ahead and paste our downloaded <b>eagle_fab.lbr</b> file into the folder.</p>
+                      
+                      <a href="images/design/libraries.png"><img src="images/design/libraries.png" width=500></a>
+                      
+                      <p>Last but not least, in order for us to activate the library, we have to head on to <b>EAGLE</b>, click on <b>Libraries</b> and ensure that the "<b>eagle_fab.lbr</b>" is lighted up green. This tells us that the library is in use.</p>
+                      
+                      <a href="images/design/libraries2.png"><img src="images/design/libraries2.png" width=500></a>
+                      
+                    <h1>Assignment</h1>
+                      <p>Now that we got the basic configuration done, the assignment given to us is to refer to the given schematics and redraw it by adding (at least) a button and an LED (with current limiting resistor). The example schematic we went for was the <b>ATtiny45</b>. The sample schematic is as seen below.</p>
+                      
+                      <a href="images/design/attiny.png"><img src="images/design/attiny.png" width=500></a>
+                      
+                      <h2>New Project</h2>
+                      <p>We start by creating a new project. To do so, simply just press on <b>Projects</b> and right click the projects folder. After that, We right click our new project <b>New > Schematic</b>. Once greeted by the schematic screen, what I usually do before I start is I would usually enable the grid by clicking on the icon as shown below. This is to help me lay out the components easier later on. </p>
+                      
+                      <a href="images/design/grid.png"><img src="images/design/grid.png" width=500></a>
+                      
+                      <p>In order to add components, we have to click on the <b>Add Parts</b>, either on the bar at the left, or you could press <b>Edit > Add</b>, or simply press <b>Ctrl + Shift + A</b>.</p>
+                      
+                      <a href="images/design/add.png"><img src="images/design/add.png" width=500></a>
+                      <a href="images/design/add2.png"><img src="images/design/add2.png" width=500></a>
+                      
+                      <h2>Components</h2>
+                      <a href="images/design/componentlist.png"><img src="images/design/componentlist.png" width=500></a><br>
+                      
+                      <p>Now that wesee this component tab, scroll all the way down until you see <b>eagle_fab</b> and click on the arrow. This shows our different components available. Next, the first thing i did was find a frame and place it onto our schematic. Once that is done, i searched for the ATtiny45 IC, and all the other components, base on the schematic sample above. Once i have all the components laid out, we have to do the wiring. To do that, simply just click on <b>Net</b>. After that, you connect according to the sample, while also omplementing the LED and button. The end product should look like this.</p>
+                      
+                      <a href="images/design/componentlist.png"><img src="images/design/componentlist.png" width=500></a>
+                      
+                      <h2>Component Values and Names</h2>
+                      
+                      <p>Last but not least, we have to name our components. To do so, simply click on <b>Name</b> and click on the different components to give them the name. Next clickon the icon beside it called <b>Value</b>, and click on the different icon the different values. Lastly, once all that is done, we can go ahead and check if all our connections are done. To do so, all we have to do is <b>Tools > ERC</b>, or simply press <b>Ctrl + Shift + E</b>. ERC stands for Electric Rule Checking, where the program will check if there is anything wrong with your connections.</p>
+                      
+                      <a href="images/design/ERC.png"><img src="images/design/ERC.png" width=500></a>
+                      
+                      <p>Once that is done we can finally convert our schematic into a PCB layout.</p>
+                      
+                      <h2>PCB Layout</h2>
+                      
+                      
+            </div>
+        </div>
+        
+        <div id="footer">
+            Copyright &copy; 2020 Muhd Fadhli
+        </div>
+        </div>
+	</body>
+</html>
