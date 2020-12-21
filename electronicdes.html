@@ -76,15 +76,55 @@
                       
                       <h2>Component Values and Names</h2>
                       
-                      <p>Last but not least, we have to name our components. To do so, simply click on <b>Name</b> and click on the different components to give them the name. Next clickon the icon beside it called <b>Value</b>, and click on the different icon the different values. Lastly, once all that is done, we can go ahead and check if all our connections are done. To do so, all we have to do is <b>Tools > ERC</b>, or simply press <b>Ctrl + Shift + E</b>. ERC stands for Electric Rule Checking, where the program will check if there is anything wrong with your connections.</p>
+                      <p>Last but not least, we have to name our components. To do so, simply click on <b>Name</b> and click on the different components to give them the name. Next click on the icon beside it called <b>Value</b>, and click on the different icon the different values. Lastly, once all that is done, we can go ahead and check if all our connections are done. To do so, all we have to do is <b>Tools > ERC</b>, or simply press <b>Ctrl + Shift + E</b>. ERC stands for Electric Rule Checking, where the program will check if there is anything wrong with your connections.</p>
                       
                       <a href="images/design/ERC.png"><img src="images/design/ERC.png" width=500></a>
                       
-                      <p>Once that is done we can finally convert our schematic into a PCB layout.</p>
+                      <p>Once that is done we can finally convert our schematic into a PCB layout. The final schematic should more or less look like the one below.</p>
+                      
+                      <a href="images/design/circuit.png"><img src="images/design/circuit.png" width=500></a>
                       
                       <h2>PCB Layout</h2>
+                      <p>To first change our schematic into a PCB layout, we have to press on the green <b>BRD</b> button on the top left of EAGLE.</p>
                       
+                      <a href="images/design/pcb.jpeg"><img src="images/design/pcb.jpeg" width=500></a><br>
                       
+                      <h2>Preparing</h2>
+                      <p>Before doing anything on the layout, we first have to set up a few things. Firstly we have to <b>resize</b> the board simply by dragging the corners. We have to take note that all components shoulbe be as close as possible to the bottom-left corner where the crosshair is located.</p>
+                      
+                      <h2>Components Placement</h2>
+                      <p>In order to help me place the components, i turned on grids as before. Then, i clicked on the "<b>Layers</b>" tool and disselected those once that i am not using. Once that is done, i can then go ahead and play around and place my components. Below shows what i did.</p>
+                      
+                      <a href="images/design/layout.jpeg"><img src="images/design/layout.jpeg" width=500></a><br>
+                      
+                      <h2>Routing</h2>
+                      <p>Next is the painful part which took me alot of tries to get right. It is the routing of airwire. This is basically routing our threads. To access it, simply click on <b>Routing Airwire</b>. This is a manual method where we route following the yellow line. There is also an automatic method but i don't have any luck using it as it will always fail on me so i prefer doing it manually. Once done correctly, it should more or less look like the image below where everything is connected.</p>
+                      
+                      <a href="images/design/line.jpeg"><img src="images/design/line.jpeg" width=500></a>
+                      <a href="images/design/layout2.jpeg"><img src="images/design/layout2.jpeg" width=500></a><br>
+                      
+                      <p>We can check if the connections are good by clicking doing the ERC test again. Last but not least, we have to configure our <b>Design Rule Checking (DRC)</b> by going to <b>Tools > DRC</b> and configure the seetings as seen below.</p>
+                      
+                      <a href="images/design/DRC1.png"><img src="images/design/DRC1.png" width=500></a>
+                      <a href="images/design/DRC2.png"><img src="images/design/DRC2.png" width=500></a>
+                      
+                      <h2>Convert to PNG and Gcode</h2>
+                      <p>To convert <b>Traces</b>, what i did was, i hide all the layers except <b>Top</b>. Then <b>File > Export > Image</b>. For the settings, make sure that it is set to <b>Monochrome</b>, with DPI of 1000. Click on <b>Browse</b> to store your PNG and then click on ok. For <b>Outline</b>, we first have to select <b>Line</b> and draw the outline of your board. Then only select your outline layer and do the same as for the traces.</p>
+                      
+                      <a href="images/design/export.jpeg"><img src="images/design/export.jpeg" width=500></a>
+                      
+                      <p>We can now convert this PNG images to Gcode just like we did with the first board.</p>
+                      
+                      <h2>Milling Process</h2>
+                      <p>We do the same thing as before. Took me a couple of tries to properly mill my board to to minor faults on my end. Eventually i got to cut it.</p>
+                      
+                      <video controls width=500>
+                        <source src="images/design/vid/cutting.mp4" type="video/mp4" >
+                      </video>
+                      
+                      <p>I have forgotten to take a picture of my board before soldering but it more or less looks like my classmate's board below:</p>
+                      
+                      <a href="images/design/finalboard.jpg"><img src="images/design/finalboard.jpg" width=500></a>
             </div>
         </div>
         
