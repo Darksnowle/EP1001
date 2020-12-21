@@ -42,16 +42,83 @@
                   <h1><u>Electronics Production</u></h1>
                       <p>For the start of my Further Digital Fabrication and Prototyping(FDFAB) journey, we were introduced to CNC Machines, and also Printed Circuit Boards (also known as PCB). Previously, we were able to create our own design/creations with the use of an arduino, a microcontroller, where we can easily programme through its own software and connect other input and output devices to it. As for PCBs, we have to actually come up with our own board designs, before we are able to programme and add any devices to it.</p>
                       
-                    <h1>Printed Circuit Boards (PCB)</h1>
+                    <h2>Printed Circuit Boards (PCB)</h2>
                       <p>So what is a PCB? A PCB mechanically supports and electrically connects electrical or electronic components using conductive tracks, pads and other features etched from one or more sheet layers of copper laminated onto and/or between sheet layers of a non-conductive substrate. <b>Why</b> do we make PCBs? When we create our own PCBs, we are able to customize the electronics to meet product requirements, the footprint of product, theres a greater reliability, ability to prototype and iterate faster and last but not least, it provides a better product integration. The first PCB that we were taught was called the <b>In-System Programer(ISP)</b> board.</p>
                       
-                      <h1>In-System Programer(ISP)</h1>
+                      <h2>In-System Programer(ISP)</h2>
                       <p>An ISP also called in-circuit serial programming is the ability of some programmable logic devices, microcontrollers, and other embedded devices to be programmed while installed in a complete system, rather than requiring the chip to be programmed prior to installing it into the system. It allows firmware updates to be delivered to the on-chip memory of microcontrollers and related processors without requiring specialist programming circuitry on the circuit board, and simplifies design work. <a href=https://en.wikipedia.org/wiki/In-system_programming target="_blank">(Source: Wikipedia)</a></p>
                       
-                      <p>For our first individual assignment, we were tasked to convert 2 PNG images of a ISP board to gcode to be milled by the CNC machine.</p>
+                      <h2>Individual Assignment</h2>
                       
+                      <p>For our first individual assignment, we were tasked to convert 2 PNG images of a ISP board, as seen below, to Gcode to be milled by the CNC machine. Before we generate the Gcode, we were first told on the the different parameters or settings that were needed to do for our traces and outlines. The table is also shown below.</p>
                       
-
+                      <a href="images/electricprod/outline.png"><img src="images/electricprod/outline.pngg" width=300></a>
+                      <a href="images/electricprod/traces.PNG"><img src="images/electricprod/traces.PNG" width=300></a>
+                      
+                      <h3>Recommended settings for Stepcraft</h3>
+                      <table border=2 width=800>
+                         <tr>
+                            <th>Operation</th>
+                            <th>Endmill size</th>
+                            <th>Cut Speed</th>
+                            <th>Cut Depth</th>
+                            <th>Total Depth</th>
+                            <th>Offset</th>
+                         </tr>
+                         
+                         <tr>
+                            <td>Traces</td>
+                            <td>0.4 mm flat</td>
+                            <td>50 ~ 60 mm/min</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>2 ~ 4</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>Traces</td>
+                            <td>0.8 mm flat</td>
+                            <td>60 ~ 80 mm/min</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>1 ~ 2</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>Traces</td>
+                            <td>0.1 mm 30 deg V-bit</td>
+                            <td>50 ~ 60 mm/min</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>0.04 ~ 0.05 mm</td>
+                            <td>1 ~ 2</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>Board Outline</td>
+                            <td>0.8 mm flat</td>
+                            <td>50 ~ 80 mm/min</td>
+                            <td>0.42 ~ 0.45 mm</td>
+                            <td>1.65 ~ 1.70 mm</td>
+                            <td>1</td>
+                         </tr>
+                      </table>
+                      
+                      <h2>Gcode Generation</h2>
+                      <p>To generate the Gcode, we first have to go to <a href=https://fabfoundation.github.io/mods>Mods</a>. Once we are on that page, all we have to do is right click anywhere on the page to bring up a menu, which we then have to press <b>Programs > Open Programs</b>. Then just scroll down until you see <b>G-code</b>, scroll down further and click on <b>mill 2D PCB</b>. This will bring up the the setup page where you can input the different parameters and the actual PNG image.</p>
+                      
+                      <p>On this page, the first thing we have to do is obviously inserst the PNG image. For a demo, i will be first doing the traces. Once that is done, ensure that the <b>DPI</b> setting is set to 1000. Once that is done, i can then go ahead and input the respective parameters as seen in the table above. Next i adjusted the speed settings to 50 for the <b>cut</b> and <b>plunge</b> speed. The final settings should look like the one seen below. Once al that is done, we can go ahead and press calculate to download the Gcode and view to see the path of the drill bit.</p>
+                      
+                      <a href="images/electricprod/mods.PNG"><img src="images/electricprod/mods.PNG" width=800></a>
+                      
+                      <p>When that is done, we can then do the same for the outline but keep in mind that the parameters are different. After we've generated the Gcode, we were then introduced to a machine called the CNC machine. </p>
+                      
+                      <a href="images/electricprod/cnc.jpeg"><img src="images/electricprod/cnc.jpeg" width=800></a>
+                      
+                      <p>In order to operate the CNC machine, we first have to ofcourse load our Gcode files on the laptop which is located beside the machine. To do so, simply click on <b>Load File</b>, and find the traces file. Once that is done, take a copper board, cover the non copper side of the board with double sided tape and place it on the protective layer on the machine. Once that is done, use the <b>arrow keys</b> the control the <b>X and Y axis</b> of the machine and the <b>Page-Up and Page-Down</b> to control the <b>Z axis</b>. We <b>first</b> have to check if the <b>Probe</b>, the button on the machine, is working, by pressing on the <b>Diagnostics</b> and press on the probe to see if the probe lights up on screen. If it does means it is working. Once that is done, we can then go ahead and install a 30 degree V-bit and the calibrate the X and Y followed by the Z axis by using the probe.</p>
+                      
+                      <a href="images/electricprod/laptop.jpeg"><img src="images/electricprod/laptop.jpeg" width=800></a><br>
+                      <i>Photo of the laptop</i>
+                      
             </div>
         </div>
         
