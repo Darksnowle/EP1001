@@ -37,10 +37,10 @@
                       <p>Previously in <b>Electronics Production</b>, we simply converted an already done ISP board PNG image to Gcode. For this week, we were taught on how to design our very own PCB layout. To do so, we will be using an electronic design automation (EDA) software, called EAGLE. Below shows my documentation process of me designing and cutting out my own PCB board.</p>
                       
                     <h2>Autodesk EAGLE</h2>
-                      <p>Before doing anything, we first have to download the actual <a href=https://www.autodesk.com/products/eagle/overview?plc=F360&term=1-YEAR&support=ADVANCED&quantity=1>EAGLE</a> software itself.</p>
+                      <p>Before doing anything, we first have to download the actual <u><a href=https://www.autodesk.com/products/eagle/overview?plc=F360&term=1-YEAR&support=ADVANCED&quantity=1>EAGLE</a></u> software itself.</p>
                       
                     <h2>Libraries</h2>
-                      <p>We then have to install a library called <a href=https://gitlab.cba.mit.edu/pub/libraries/tree/master/eagle>"fab.lbr"</a>, and add it to EAGLE so that we can use the component symbols in a schematic. To do so, simply just press on the fab.lbr and click on the download button as seen below.</p>
+                      <p>We then have to install a library called <u><a href=https://gitlab.cba.mit.edu/pub/libraries/tree/master/eagle>"fab.lbr"</a></u>, and add it to EAGLE so that we can use the component symbols in a schematic. To do so, simply just press on the fab.lbr and click on the download button as seen below.</p>
                       
                       <a href="images/design/fablbr.PNG"><img src="images/design/fablbr.PNG" width=500></a>
                       
@@ -103,6 +103,9 @@
                       <a href="images/design/line.jpeg"><img src="images/design/line.jpeg" width=500></a>
                       <a href="images/design/layout2.jpeg"><img src="images/design/layout2.jpeg" width=500></a><br>
                       
+                      <i><a href="images/design/fadhli.brd">Board File</a></i>
+                      
+                      
                       <p>We can check if the connections are good by clicking doing the ERC test again. Last but not least, we have to configure our <b>Design Rule Checking (DRC)</b> by going to <b>Tools > DRC</b> and configure the seetings as seen below.</p>
                       
                       <a href="images/design/DRC1.png"><img src="images/design/DRC1.png" width=500></a>
@@ -125,6 +128,59 @@
                       <p>I have forgotten to take a picture of my board before soldering but it more or less looks like my classmate's board below:</p>
                       
                       <a href="images/design/finalboard.jpg"><img src="images/design/finalboard.jpg" width=500></a>
+                      
+                      <h2>Soldering</h2>
+                      
+                      <table border=2 width=800>
+                         <tr>
+                            <th>Item</th>
+                             <th>Qty</th>
+                         </tr>
+                         
+                         <tr>
+                            <td>Push Button</td>
+                            <td>01</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>LED</td>
+                            <td>01</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>ATtiny45</td>
+                            <td>01</td>
+                         </tr>
+                         
+                         <tr>
+                            <td>10K resistor</td>
+                            <td>01</td>
+                         </tr>
+                          
+                         <tr>
+                            <td>499 resistor</td>
+                            <td>01</td>
+                         </tr>
+                          
+                         <tr>
+                            <td>1uF Capacitor</td>
+                            <td>01</td>
+                         </tr>
+                          
+                         <tr>
+                            <td>FDTI Connector</td>
+                            <td>01</td>
+                         </tr>
+                          
+                         <tr>
+                            <td>2x3 pin Header</td>
+                            <td>01</td>
+                         </tr>
+                      </table>
+                      
+                      <p>For soldering, those are the components needed, as seen from the schematic above. Just like the previous board, i removed the excess copper, added some flux and soldered the components on. The results are seen below.</p>
+                      
+                      <a href="images/design/attiny45.jpeg"><img src="images/design/attiny45.jpeg" width=500></a>
             </div>
         </div>
         
