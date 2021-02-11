@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fadhli's Website</title>
+        <link rel="stylesheet" type="text/css" href="style3.css" />
+	</head>
+
+	<body>
+		<div id="container"> 
+            <div id="header">
+                <h1>Molding and Casting</h1>
+            </div>
+        
+        <div id="content">
+            <div id="nav">
+                <h2>Navigation</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="info.html">Module Schedule</a></li>
+                        <li><a href="safety.html">FabLab Safety</a></li>
+                        <li><a href="electric.html">Electronics Production</a></li>
+                        <li><a href="electronicdes.html">Electronics Design</a></li>
+                        <li><a href="program.html">Embedded Programming</a></li>
+                        <li><a href="2d.html">2D Computer Controlled Machining</a></li>
+                        <li><a class="selected" href="moldncast.html">Molding & Casting</a></li>
+                        <li><a href="application.html">Interface & Applications Programming</a></li>
+                        <li><a href="final.html">Final Project</a>
+                            <ul>
+                                <li><a href=progress.html>Progress</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                
+            </div>
+                  <div id="main">
+                     <h1>Molding and Casting</h1>
+                      <h2>Assignments</h2>
+                      <p>For this section, there are two sections we have to do. Obviously we first have to design and create the mold and the we are going to use the mold for the cast.</p>
+                      
+                      <h2>Molding</h2>
+                      <p>For molding, we first have to create a design for the mold. For that i will use Fusion 360 ofcourse. Since i am not using molding and casting as part of my final project, i decided to create something simple, which is also because of time constraints. One of the requirements for this assignment is that we have to design something with a slope so that is exactly what i did and here is how it went.</p>
+                      
+                      <h3>Designing</h3>
+                      <p>For the design, i decided to just make a simple cone so to start, i just drew a simple circle of dimension 20mm, extrude it by 10mm and have the <b>taper angle</b> at -20 degress. Once that is done, i just created a base with the dimensions of 50x50 mm. I then extruded it by 5mm. After that is done, i designed the walls of the mold. I made it slanted so that the removal of the mold would be easier later on. </p><br>
+                      <a href="images/molding/conewithbase.PNG"><img src="images/molding/conewithbase.PNG" width=500></a>
+                      <a href="images/molding/walls.PNG"><img src="images/molding/walls.PNG" width=500></a>
+                      
+                      <p>I then repeated it for each sides and extruded it, again, 50 by 50mm. The finished product should look like so. </p>
+                      <a href="images/molding/conedone.PNG"><img src="images/molding/conedone.PNG" width=500></a>
+                      
+                      <h3>Creating Toolpath</h3>
+                      <p>The designing portion is done. Now we want to produce the <b>.nc</b> so that we are able to cut using the CNC machine. To do that, all you have to do is firstly click on the <b>"Design"</b> and select <b>"Manufacture"</b>. Next, just follow as the pictures shown below. Make sure to go from the left tab to right and from the top to bottom</p>
+                      <a href="images/molding/toolpath/toolsettings.PNG"><img src="images/molding/toolpath/toolsettings.PNG" width=500></a><br>
+                      <p><i>Tool Settings</i></p>
+                      <a href="images/molding/toolpath/geosettingsmid.PNG"><img src="images/molding/toolpath/geosettingsmid.PNG" width=500></a><br>
+                      <p><i>Geometry For Cone</i></p>
+                      <a href="images/molding/toolpath/geosettingsoutside.PNG"><img src="images/molding/toolpath/geosettingsoutside.PNG" width=500></a><br>
+                      <p><i>Geometry For Cube</i></p>
+                      <a href="images/molding/toolpath/passessettings.png"><img src="images/molding/toolpath/passessettings.png" width=500 length=500></a><br>
+                      <p><i>Passes Settings</i></p>
+                      
+                      <p>When you're done, simply right click on the setup and click on <b>Create a NC Program</b>. Do the necessary settings such as renaming andselecting your save location and boom. You're done.</p>
+                      <a href="images/molding/toolpath/post.png"><img src="images/molding/toolpath/post.png" width=500></a>
+                      
+                      
+
+            </div>
+        </div>
+        
+        <div id="footer">
+            Copyright &copy; 2020 Muhd Fadhli
+        </div>
+        </div>
+	</body>
+</html>
