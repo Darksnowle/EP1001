@@ -36,6 +36,9 @@
                   <div id="main">
                      
                   <h1><u>Electronics Production</u></h1>
+                      
+                      <hr>
+                      
                       <p>For the start of my Further Digital Fabrication and Prototyping(FDFAB) journey, we were introduced to CNC Machines, and also Printed Circuit Boards (also known as PCB). Previously, we were able to create our own design/creations with the use of an arduino, a microcontroller, where we can easily programme through its own software and connect other input and output devices to it. As for PCBs, we have to actually come up with our own board designs, before we are able to programme and add any devices to it.</p>
                       
                     <h2>Printed Circuit Boards (PCB)</h2>
@@ -137,73 +140,6 @@
                       
                       <a href="images/electricprod/program.jpg"><img src="images/electricprod/program.jpg" width=500></a>
                       
-                      <h2>Programming</h2>
-                      <p>To program my programmer board, i first need to find a working programmer board. I know it sounds ridiculous but its true. I need a board to transmit programs to MY board in order for my board to work. For my case, I used Mr Chew's (my lecturer) board.</p> 
-                      
-                      <ol>
-                          
-                          <li><b>Software Download</b><br>
-                              
-                              Before i could do anything, i have to install some softwares.
-                      <ul>
-                        <li><b><u>AVR8 GNU Toolchain</u></b></li>
-                        <li><b><u>GNU Make</u></b></li>
-                        <li><b><u>AVRdude</u></b></li>
-                        <li><b><u>Zadig</u></b></li>
-                        <li><b><u>fts software</u></b></li>
-                      </ul>
-                      <p>All these softwares are available at <a href="https://carlossilesblog.wordpress.com/2016/05/18/install-atmel-avr-toolchain">Carlos Siles Projects</a> site.</p></li>
-                          
-                          <li>
-                            <b>Environment Variable</b><br>
-                              
-                            Once installed, we first have to set the different paths. To do that, all you have to do is simply <b>Control Panel > System and Security > System > Advanced Settings > Environment Variables</b>. Once there, click on the PATH, and add the different paths as shown below.<br>
-                              
-                            <a href="images/electricprod/environ.png"><img src="images/electricprod/environ.png" width=500></a>
-                            <a href="images/electricprod/path.png"><img src="images/electricprod/path.png" width=500></a>
-                          </li>
-                          
-                          <li>
-                            <b>Programming</b>
-                              
-                            Once that is done, we can start programming. To do that, just get your command prompt by typing <b>CMD</b> at your windows search bar. Next you need to find you need to find your <b>fts software</b> folder. To do so, just type <b>cd</b> on your command prompt, followed by your folder path, as seen below. Next you need to edit your <b>Makefile</b>folder if you are using a different type of chip. For me since im using a tiny 85, i will change 45 to 85. Once that is done, i can go ahead and do the command <b>make</b>. After command is completes, a file called fts_firmware.hex will be generated.<br>
-                              
-                            <a href="images/electricprod/fts.png"><img src="images/electricprod/fts.png" width=500></a>
-                            <a href="images/electricprod/edit.png"><img src="images/electricprod/edit.png" width=500></a>
-                            <a href="images/electricprod/make.png"><img src="images/electricprod/make.png" width=500></a><br>
-                              
-                            Next, run <b>make flash</b>, this command will erase the target chip, and program the flash memory with the contents of the .hex file built. You should see several progress bars while avrdude erases, programs, and verifies the chip.<br>
-                              
-                            <a href="images/electricprod/flash.png"><img src="images/electricprod/flash.png" width=500></a><br>
-                              
-                            After programmed the flash memory, the next thing is to set the configuration fuses. First, set the fuses that control where the microcontroller gets its clock source from, because the board works as a USB device and it requires the clock to come from the PLL. 
-
-                            Confirmed that USB works, set the fuse that disables the reset pin and turns it into a regular GPIO pin, i.e. letting the chip use the reset pin to program other boards, but will disable the ability for this chip to be programmed. Run the make fuses command. This will set up all of the fuses except the one that disables the reset pin.<br> 
-
-                            <a href="images/electricprod/fuses.png"><img src="images/electricprod/fuses.png" width=500></a><br>
-                              
-                            <h3>Check USB Functionality</h3>
-                              
-                            Now, the USB should be detected if you were to connect your own board to your computer. If not, all you have to do is use <b>Zadig</b>, and and make sure that it is selected as shown below, then click on install.<br>
-                              
-                            <a href="images/electricprod/zadig.png"><img src="images/electricprod/zadig.png" width=500></a><br>
-                              
-                            Once that is done, head on to device manager and see if your board is detected. If it is, it should be shown as such.<br>
-                              
-                            <a href="images/electricprod/devicem.png"><img src="images/electricprod/devicem.png" width=500></a><br>
-                              
-                            The final steps to turn your board into a working ISP programmer is firstly you need to change the bit that will turn the ATtiny45's reset pin into a GPIO pin, this will disable the ability for this chip to be programmed. When everything is working, connect the working AVR programmer to my board for the last time and run <b>make rstdisbl</b>. This is similar to make fuses command, and include that reset disable bit. After executing, avrdude will never be able to talk to this chip again through the ISP header. 
-                              
-                            <a href="images/electricprod/reset1.png"><img src="images/electricprod/reset1.png" width=500></a><br>
-                              
-                            <b>Final step!!</b>
-                              
-                            Once all that is done, i just execute the program as shown below after connecting my programmer board to my target board. If all goes well, your command prompt should look as such.
-                              
-                            <a href="images/electricprod/final.png"><img src="images/electricprod/final.png" width=500></a><br>
-                              
-                          </li>
-                      </ol>
                       
                       
             </div>
