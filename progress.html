@@ -24,7 +24,6 @@
                         <li><a href="program.html">Embedded Programming</a></li>
                         <li><a href="2d.html">2D Computer Controlled Machining</a></li>
                         <li><a href="moldncast.html">Molding & Casting</a></li>
-                        <li><a href="application.html">Interface & Applications Programming</a></li>
                         <li><a href="final.html">Final Project</a>
                             <ul>
                                 <li><a class="selected" href=progress.html>Progress</a></li>
@@ -176,6 +175,63 @@
                       
                       <p>That will be all for the settings. Now just scroll all the way down and click on <b>Calculate</b> and press Ok. They will now bring you to the toolpath screen. Here you can watch a preview of the cut before you cut and all those good stuff. Once you are done, simply just click Save and proceed with the cutting.</p>
                       <a href="images/final/cutting/vcarveend.png"><img src="images/final/cutting/vcarveend.png" width=800></a>
+                      
+                      <h2>CNC Cutting</h2>
+                      <video controls width=500>
+                        <source src="images/final/fdfab/cutting.mp4" type="video/mp4" >
+                      </video>
+                      <a href="images/final/fdfab/cutdone.jpeg"><img src="images/final/fdfab/cutdone.jpeg" width=800></a>
+                      
+                      <h2>Assembly</h2>
+                      <p>The assembly was easy enough. I first had to sand off the edges of the wood before putting them all together. Thankfully my project does not require any screws to put them all together so i simply had to just piece them all together. I tried putting the pieces together and it looks something like this.</p>
+                      
+                      <a href="images/final/fdfab/base.jpeg"><img src="images/final/fdfab/base.jpeg" width=800></a>
+                      
+                      <p>Next i laser cut the rollers and 3D printed the motor adapted. Alongside that, for the belt, i used the yoga band which i bought from Decathlon. I then put them all together for the final hardware. I am very happy with the result as it looks somewhat like what i envisioned.</p>
+                      
+                      <a href="images/final/fdfab/parts1.jpeg"><img src="images/final/fdfab/parts1.jpeg" width=800></a>
+                      <a href="images/final/fdfab/parts2.jpeg"><img src="images/final/fdfab/parts2.jpeg" width=800></a>
+                      <a href="images/final/fdfab/donebelt.jpeg"><img src="images/final/fdfab/donebelt.jpeg" width=800></a>
+                      
+                      <h2>Electronics</h2>
+                      <p>For the electronics portion the components i needed were, my own hello board, DC Motor, L298N to drive the motor, Battery holder to power the driver and also Ultrasonic sensor</p>
+                      <ul>
+                        <li><i>My own hello board</i><br><a href="images/final/fdfab/helloboard.jpg"><img src="images/final/fdfab/helloboard.jpg" width=500></a></li>
+                        <li><i>L298N Motor Driver to drive DC Motor</i><br><a href="images/final/fdfab/l298n.jpg"><img src="images/final/fdfab/l298n.jpg" width=500></a></li>
+                        <li><i>DC Motor</i><br><a href="images/final/fdfab/motor.jpg"><img src="images/final/fdfab/motor.jpg" width=500></a></li>
+                        <li><i>Ultrasonic Sensor</i><br><a href="images/final/fdfab/"><img src="images/final/fdfab/ultrasonic.jpg" width=500></a></li>
+                    </ul>
+                      
+                      <h2>Hello Board</h2>
+                      <p>The designing of my hello board was pretty straight forward. Initially i wanted to have a button to my project but i removed it last minute after soldering my board due to reasons which is why i used the ATTiny44 board as there are 14 I/O pins. Other than that, in my schematic, there are 0ohm resistors. These resistors acts as jumper wires as the way i designed my board (with the help of my lecturer), makes the connection cramped up.</p>
+                      <a href="images/final/schematic.PNG"><img src="images/final/schematic.PNG" width=800></a>
+                      <a href="images/final/board.PNG"><img src="images/final/board.PNG" width=800></a>
+                      
+                      <p>My first soldering attempt was very bad. It didnt work surprise surprise. But after some assistance from my lecturer Mr Chew, he was able to make it work and replace the jumper wires that i had with an actual 0ohm resistors so happy days. The new board can be seen above.</p>
+                      <a href="images/final/boardb4.jpg"><img src="images/final/boardb4.jpg" width=800></a>
+                      
+                      <p>To test out my board and that my components are working, i first did up a program for my ultrasonic sensor which i found online. I first had to look up the datasheet for the ATTiny44 as the pinouts are different but other than that it is pretty straight forward from there.This is the outcome. It works.</p>
+                      
+                      <a href="images/final/pinout.png"><img src="images/final/pinout.png" width=800></a>
+                      <i>ATTiny44 pinout</i>
+                      
+                      <video controls width=500>
+                        <source src="images/final/fdfab/ultrasonic.jpg" type="video/mp4" >
+                      </video>
+                      
+                      <p>Next i tested to see if the motor works.</p>
+                      <video controls width=500>
+                        <source src="images/final/fdfab/motor.jpg" type="video/mp4" >
+                      </video>
+                      
+                      <p>Once the testing is all done, I am ready to put everything together. It is pretty straight forward as im only using 2 components and also no libraries are needed for my programming. The final code is as shown below and so as the working product.</p>
+                      <a href="images/final/code.PNG"><img src="images/final/code.PNG" width=800></a>
+                      <video controls width=500>
+                        <source src="images/final/belt.mp4" type="video/mp4" >
+                      </video>
+                      
+                      <h2>Overall Thoughts</h2>
+                      <p>Overall it was a pretty straight forward project. There are definitely flaws such as the ultrasonic sensor sometimes doesnt pick up that there is an object and also i could not get to interface an emergency stop button as planned but other than that i am quite happy with the end product. It is somewhat something i envisioned. Definitely if given more time i would work on it more and improve upon it but with the time given i am happy with the final product.</p>
             </div>
         </div>
         
