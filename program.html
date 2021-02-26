@@ -107,6 +107,31 @@
                           </li>
                       </ol>
                       
+                      <h2>Programming using Arduino</h2>
+                      
+                      <h3>Setting Up</h3>
+                      <p>Before we can use arduino to program our hello board, there are some things we first have to do. For starters, we first have to copy and paste the board manager url to the Arduino library manager, which will automatically install a library for the ATTiny. To do so we will head on over to the Arduino software. Once opened, click on <b>File > Preferences</b>. Under <b>Additional Boards Manager URLs</b>, paste this URL: "http://drazzy.com/package_drazzy.com_index.json" and click okay.</p>
+                      
+                      
+                      <a href="images/program/preferences.PNG"><img src="images/program/preferences.PNG" width=800></a><br>
+                      
+                      <p>Next we have to restart the software. Once restarted, we will then have to head on over to <b>Tools > Boards: > Boards Manager...</b>. Once there, simply search for "tiny" and install the one by <b>Spence Konde</b>. After installation, we can then select our board. For now, since we are using the ATTiny 85, we select the 25/45/85 (no bootloader). Next important thing is for the <b>Clock:</b> make sure to pick the ones that is internal unless you have an external clock connected to the microcontroller. </p>
+                      <a href="images/program/libmanager.png"><img src="images/program/libmanager.png" width=800></a>
+                      <a href="images/program/Arduinoconfigure4.png"><img src="images/program/Arduinoconfigure4.png" width=800></a><br>
+                      
+                      <h3>Programming</h3>
+                      <p>We can now start programming. However before anything, we first have to burn the bootloader first. To do so just <b>Tools > Burn Bootloader</b> while your board and programmer is connected. This will change the fuses to the appropriate settings. Once that is done, when you have to necessary program, verify it and now instead of the traditional way of uploading, for our board, we have to click on <b>Sketch > Upload Using Programmer</b>. This is so that the program will be uploaded to our hello board through our programmer instead of it being uploaded to our programmer, which is what we dont want.</p>
+                      
+                      <h3>Assignment</h3>
+                      <p>For our assingment, we are tasked to program our board. So for simplicity, i decided to just use the blink program that is already given and change it accordingly. Before i do that, i went ahead and Google'd the datasheet for the ATTiny85 chip so as to know what pin my LED is configured to.</p>
+                      <a href="images/program/attiny85.png"><img src="images/program/attiny85.png" width=800></a>
+                      
+                      <p>So based off my schematic, my LED is connected to PB4 which is PIN 3. So for the Blink program, i simply changed the pin to 3 and upload it to my board. Unfortunately i do not have a video of my board but here is my friend's one which is basically the same principle.</p>
+                      <a href="images/program/blink.PNG"><img src="images/program/blink.PNG" width=800></a><br>
+                      <u><a href="files/fdfab/Blink/Blink.ino">Blink program.</a></u><br>
+                      <video controls width=500>
+                        <source src="images/program/boardblinkvideo.mp4" type="video/mp4" >
+                      </video><br>
                       
 
             </div>
